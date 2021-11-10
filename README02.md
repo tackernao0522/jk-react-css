@@ -270,3 +270,25 @@ const SButton = styled.button`
 `
 ```
 
+`App.js`の編集<br>
+
+```
+import './App.css';
+import { CssModules } from './components/CssModules';
+import { InlineStyle } from './components/InlineStyle';
+import { StyledComponents } from './components/StyledComponents'; // 追記
+import { StyledJsx } from './components/StyledJsx';
+
+function App() {
+  return (
+    <div className="App">
+      <InlineStyle />
+      <CssModules />
+      <StyledJsx />
+      <StyledComponents /> // 追記
+    </div>
+  );
+}
+
+export default App;
+```
