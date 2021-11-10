@@ -1,9 +1,10 @@
 import './App.css';
+import { InlineStyle } from './components/InlineStyle';
 
 function App() {
   return (
     <div className="App">
-      <h1>ReactのCSSの当て方</h1>
+      <InlineStyle />
     </div>
   );
 }
