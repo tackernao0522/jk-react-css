@@ -292,3 +292,86 @@ function App() {
 
 export default App;
 ```
+
+## Emotion
+
++ `$ yarn add @emotion/react`の実行<br>
+
+又は<br>
+
++ `$ npm install @emotion/react`の実行<br>
+
++ `$ npm install @emotion/styled`の実行<br>
+
+又は<br>
+
++ `yarn add @emotion/styled`の実行<br>
+
+<h5>src/components/Emotion.jsxを作成</h5>
+
+```
+/** @jsxRuntime classic */ // 必須追記
+/** @jsx jsx */ // 必須追記
+import { jsx, css } from "@emotion/react"
+import styled from "@emotion/styled"
+
+export const Emotion = () => {
+    const containerStyle = css`
+        border: solid 2px #392eff;
+        border-radius: 20px;
+        padding: 8px;
+        margin: 8px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    `
+
+    const titleStyle = css({
+        margin: 0,
+        color: '#3d84a8',
+    })
+
+    return (
+        <div css={containerStyle}>
+            <p css={titleStyle}>- Emotion -</p>
+            <SButton>FIGHT!!</SButton>
+        </div>
+    )
+}
+
+const SButton = styled.button`
+background-color: #adedd8;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    &:hover {
+        background-color: #46cdcf;
+        color: #fff;
+        cursor: pointer;
+`
+```
+
+`App.js`の編集<br>
+
+```
+import './App.css';
+import { CssModules } from './components/CssModules';
+import { Emotion } from './components/Emotion'; // 追記
+import { InlineStyle } from './components/InlineStyle';
+import { StyledComponents } from './components/StyledComponents';
+import { StyledJsx } from './components/StyledJsx';
+
+function App() {
+  return (
+    <div className="App">
+      <InlineStyle />
+      <CssModules />
+      <StyledJsx />
+      <StyledComponents />
+      <Emotion /> // 追記
+    </div>
+  );
+}
+
+export default App;
+```
