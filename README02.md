@@ -137,3 +137,81 @@ yarnの場合<br>
 
 `$ yarn add styled-jsx` <br>
 
+<h5>$ npm run eject を実行する(yarnでもnpmでもどちらでも実行)</h5>
+
+`pacckage.json`の編集<br>
+
+```
+"babel": {
+    "presets": [
+      "react-app"
+    ],
+      // 以下を追加
+    "plugins": [
+      "styled-jsx/babel"
+    ]
+},
+```
+
+`src/components/StyledJsx.jsx`を作成<br>
+
+```
+export const StyledJsx = () => {
+    return (
+        <>
+            <div className="container">
+                <p className="title">- Styled JSX -</p>
+                <button className="button">FIGHT!!</button>
+            </div>
+
+            <style jsx="true">{`
+                .container {
+                    border: solid 2px #392eff;
+                    border-radius: 20px;
+                    padding: 8px;
+                    margin: 8px;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                }
+                .title {
+                    margin: 0;
+                    color: #3d84a8;
+                }
+                .button {
+                    background-color: #adedd8;
+                        border: none;
+                        padding: 8px;
+                        border-radius: 8px;
+                }
+                .button:hover {
+                    background-color: #46cdcf;
+                    color: #fff;
+                    cursor: pointer;
+                }
+            `}</style>
+        </>
+    )
+}
+```
+
+`App.js`の編集<br>
+
+```
+import './App.css';
+import { CssModules } from './components/CssModules';
+import { InlineStyle } from './components/InlineStyle';
+import { StyledJsx } from './components/StyledJsx'; // 追記
+
+function App() {
+  return (
+    <div className="App">
+      <InlineStyle />
+      <CssModules />
+      <StyledJsx /> // 追記
+    </div>
+  );
+}
+
+export default App;
+```
