@@ -122,3 +122,18 @@ function App() {
 
 export default App;
 ```
+
+## Styled JSX
+
+<h5>styled-jsxのインストール</h5>
+
+npmの場合<br>
+
+`$ npm i -S styled-jsx`<br>
+又は<br>
+`$ npm install --save styled-jsx`<br>
+
+yarnの場合<br>
+
+`$ yarn add styled-jsx` <br>
+
