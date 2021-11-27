@@ -56,7 +56,7 @@ export default App;
 
 `$ yarn add node-sass`<br>
 
-`$ npm install -s node sass`<br>
+`$ npm install -s node-sass`<br>
 
 `$ yarn add node-sass`<br>
 
