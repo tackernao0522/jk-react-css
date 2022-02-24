@@ -54,6 +54,8 @@ export default App;
 
 ### node sassのインストール(以下3点を実行)
 
+※ nodeのバージョンを16以上にする<br>
+
 `$ yarn add node-sass`<br>
 
 `$ npm install -s node-sass`<br>
